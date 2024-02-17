@@ -1,10 +1,10 @@
 "use client";
 
-import { Apartement } from "@/types/apartement";
+import { Apartment } from "@/types/apartment";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 
-export default function ListOfApartements({ data }: { data: Apartement[] }) {
+export default function ListOfApartements({ data }: { data: Apartment[] }) {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pathname = usePathname();

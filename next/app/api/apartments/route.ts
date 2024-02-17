@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
     price: z.number().min(1),
     bathrooms: z.number().min(1),
     bedrooms: z.number().min(1),
-    apartementArea: z.number().min(1),
+    apartmentArea: z.number().min(1),
     location: z.object({
       longitude: z.number(),
       latitude: z.number(),

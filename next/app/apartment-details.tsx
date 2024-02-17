@@ -1,9 +1,9 @@
-import { Apartement } from "@/types/apartement";
+import { Apartment } from "@/types/apartment";
 
 async function getData(id: string | undefined) {
   if (id === undefined) return null;
   console.log(id);
-  const res = await fetch(`http://localhost:3000/api/apartements/${id}`, {
+  const res = await fetch(`http://localhost:3000/api/apartments/${id}`, {
     next: { revalidate: 60 },
   });
   if (!res.ok) {
@@ -11,7 +11,7 @@ async function getData(id: string | undefined) {
     throw new Error("Failed to fetch data");
   }
   const data = await res.json();
-  return data as Apartement;
+  return data as Apartment;
 }
 
 export default async function ApartementDetails({
@@ -34,7 +34,7 @@ export default async function ApartementDetails({
         className="w-full h-1/2 object-contain justify-center"
       />
       <div className="flex flex-col">
-        <p>Apartement Area : {data.apartementArea}</p>
+        <p>Apartement Area : {data.apartmentArea}</p>
         <p>Bathrooms : {data.bathrooms}</p>
         <p>Bedrooms : {data.bedrooms}</p>
         <p>price : {data.price}</p>

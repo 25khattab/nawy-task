@@ -1,15 +1,15 @@
 import { ObjectId } from "mongodb"
 
-export type Apartement = {
+export type Apartment = {
     _id:ObjectId;
-    apartementArea:number;
+    apartmentArea:number;
     bathrooms:number;
     bedrooms:number;
-    location:ApartemntLocation
+    location:ApartmentLocation
     price:number
 }
 
-type ApartemntLocation = {
+type ApartmentLocation = {
     longitude:number,
     latitude:number,
     area:string,

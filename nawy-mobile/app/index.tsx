@@ -8,14 +8,14 @@ import {
 
 import EditScreenInfo from "@/components/EditScreenInfo";
 import { Text, View } from "@/components/Themed";
-import { Apartement } from "@/types/apartement";
+import { Apartment } from "@/types/apartment";
 import { useEffect, useState } from "react";
 import { API_URL } from "@/constants/config";
 import apartemntImage from "../assets/images/apartment.jpeg";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { router } from "expo-router";
 export default function TabOneScreen() {
-  const [data, setData] = useState<Apartement[] | undefined>(undefined);
+  const [data, setData] = useState<Apartment[] | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<any>(undefined);
   useEffect(() => {

@@ -1,9 +1,9 @@
-import { Apartement } from "@/types/apartement";
-import ApartementDetails from "./apartement-details";
-import ListOfApartements from "./list-of-apartements";
+import { Apartment } from "@/types/apartment";
+import ApartmentDetails from "./apartment-details";
+import ListOfApartments from "./list-of-apartments";
 
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/apartements", {
+  const res = await fetch("http://localhost:3000/api/apartments", {
     next: { revalidate: 60 },
   });
   if (!res.ok) {
@@ -11,7 +11,7 @@ async function getData() {
     throw new Error("Failed to fetch data");
   }
   const data = await res.json();
-  return data as Apartement[];
+  return data as Apartment[];
 }
 
 export default async function Page({
@@ -24,9 +24,9 @@ export default async function Page({
     <main className="flex min-h-screen max-h-screen flex-col items-center p-12 gap-y-8">
       <h1>Apartements Listing</h1>
       <div className=" max-h-full w-full flex flex-row overflow-hidden flex-grow">
-       <ListOfApartements data={data}/>
+       <ListOfApartments data={data}/>
 
-        <ApartementDetails
+        <ApartmentDetails
           searchParams={{
             id: searchParams.id,
           }}

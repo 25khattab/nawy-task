@@ -1,15 +1,14 @@
 import { ActivityIndicator, StyleSheet } from "react-native";
 
-import EditScreenInfo from "@/components/EditScreenInfo";
 import { Text, View } from "@/components/Themed";
 import { useLocalSearchParams } from "expo-router";
-import { Apartement } from "@/types/apartement";
+import { Apartment } from "@/types/apartment";
 import { useEffect, useState } from "react";
 import { API_URL } from "@/constants/config";
 
 export default function ApartementDetails() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const [data, setData] = useState<Apartement | undefined>(undefined);
+  const [data, setData] = useState<Apartment | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<any>(undefined);
   useEffect(() => {
@@ -52,8 +51,7 @@ export default function ApartementDetails() {
   if (data)
     return (
       <View style={styles.container}>
-      
-        <Text style={styles.title}>Apartement Area: {data.apartementArea}</Text>
+        <Text style={styles.title}>Apartement Area: {data.apartmentArea}</Text>
         <Text style={styles.title}>Bathrooms: {data.bathrooms}</Text>
         <Text style={styles.title}>Bedrooms: {data.bedrooms}</Text>
         <Text style={styles.title}>Price: {data.price}</Text>
