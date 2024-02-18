@@ -2,6 +2,7 @@ import { ObjectId } from "mongodb"
 
 export type Apartment = {
     _id:ObjectId;
+    name:string
     apartmentArea:number;
     bathrooms:number;
     bedrooms:number;

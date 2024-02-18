@@ -9,6 +9,7 @@ export async function GET() {
 export async function POST(request: NextRequest) {
   const body = await request.json();
   const schema = z.object({
+    name:z.string().min(1),
     price: z.number().min(1),
     bathrooms: z.number().min(1),
     bedrooms: z.number().min(1),

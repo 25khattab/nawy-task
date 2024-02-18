@@ -51,6 +51,7 @@ export default function ApartementDetails() {
   if (data)
     return (
       <View style={styles.container}>
+        <Text style={styles.title}>Name: {data.name}</Text>
         <Text style={styles.title}>Apartement Area: {data.apartmentArea}</Text>
         <Text style={styles.title}>Bathrooms: {data.bathrooms}</Text>
         <Text style={styles.title}>Bedrooms: {data.bedrooms}</Text>

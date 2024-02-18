@@ -80,7 +80,7 @@ export default function TabOneScreen() {
 
                 <View style={styles.text}>
                   <Text style={styles.areaText}>
-                    {item.location.area}, {item.location.city}
+                    {item.name}
                   </Text>
                 </View>
               </View>

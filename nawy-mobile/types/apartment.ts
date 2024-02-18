@@ -1,5 +1,6 @@
 export type Apartment = {
     _id:string;
+    name:string;
     apartmentArea:number;
     bathrooms:number;
     bedrooms:number;
